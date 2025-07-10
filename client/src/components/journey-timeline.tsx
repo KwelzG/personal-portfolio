@@ -1,48 +1,21 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { User, Upload } from "lucide-react";
 
 interface TimelineItem {
+  id: number;
   age: string;
   title: string;
   description: string;
-  isActive?: boolean;
   side: "left" | "right";
+  isActive: boolean | null;
+  imageUrl: string | null;
+  displayOrder: number;
+  createdAt: Date | null;
+  updatedAt: Date | null;
 }
-
-const timelineData: TimelineItem[] = [
-  {
-    age: "13",
-    title: "Early entrepreneurial mindset",
-    description: "Developed strategic thinking and began exploring technology's potential to solve real-world problems.",
-    side: "left"
-  },
-  {
-    age: "16",
-    title: "Blockchain introduction",
-    description: "First exposure to blockchain technology and cryptocurrency. Recognized the transformative potential of decentralized systems.",
-    side: "right"
-  },
-  {
-    age: "18",
-    title: "Skill diversification",
-    description: "Expanded skill set beyond technology, learning traditional trades while building digital expertise.",
-    side: "left"
-  },
-  {
-    age: "19",
-    title: "Founded Prop3 & LexAI",
-    description: "Launched two technology companies focused on AI and blockchain solutions for African markets.",
-    side: "right",
-    isActive: true
-  },
-  {
-    age: "Future",
-    title: "Scaling impact across Africa",
-    description: "Building sustainable technology infrastructure that creates lasting economic opportunities across the continent.",
-    side: "left"
-  }
-];
 
 function TimelineItemComponent({ item, index }: { item: TimelineItem; index: number }) {
   const ref = useRef(null);
@@ -140,6 +113,45 @@ function TimelineItemComponent({ item, index }: { item: TimelineItem; index: num
 }
 
 export default function JourneyTimeline() {
+  const { data: timelineItems = [], isLoading } = useQuery({
+    queryKey: ["/api/timeline"],
+  });
+
+  if (isLoading) {
+    return (
+      <section id="journey" className="py-20 bg-site-secondary relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="text-site-gold">Loading timeline...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Calculate dynamic path for SVG based on number of items
+  const itemCount = timelineItems.length;
+  const pathHeight = Math.max(800, itemCount * 200);
+  const generateCurvedPath = (height: number, items: number) => {
+    if (items <= 1) return "M 32 0 L 32 200";
+    
+    const stepHeight = height / (items - 1);
+    let path = "M 32 0";
+    
+    for (let i = 1; i < items; i++) {
+      const y = i * stepHeight;
+      const prevY = (i - 1) * stepHeight;
+      const midY = prevY + stepHeight / 2;
+      
+      // Alternate curve directions
+      const curveX = i % 2 === 1 ? 25 : 39;
+      
+      path += ` Q ${curveX} ${midY} 32 ${y}`;
+    }
+    
+    return path;
+  };
+
   return (
     <section id="journey" className="py-20 bg-site-secondary relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -160,13 +172,42 @@ export default function JourneyTimeline() {
 
         {/* Interactive Timeline */}
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-site-gold via-site-silver to-site-gold" />
+          {/* Dynamic Curved Timeline - SVG Path */}
+          <svg 
+            className="absolute left-1/2 transform -translate-x-1/2 w-16 h-full pointer-events-none" 
+            viewBox={`0 0 64 ${pathHeight}`} 
+            preserveAspectRatio="xMidYStretch"
+            style={{ height: `${itemCount * 16 * 16}px` }}
+          >
+            <defs>
+              <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#FFD700" stopOpacity="1" />
+                <stop offset="30%" stopColor="#C0C0C0" stopOpacity="0.8" />
+                <stop offset="70%" stopColor="#C0C0C0" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#FFD700" stopOpacity="1" />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge> 
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <path
+              d={generateCurvedPath(pathHeight, itemCount)}
+              stroke="url(#timelineGradient)"
+              strokeWidth="3"
+              fill="none"
+              filter="url(#glow)"
+              className="drop-shadow-lg"
+            />
+          </svg>
 
           {/* Timeline Items */}
           <div className="space-y-16">
-            {timelineData.map((item, index) => (
-              <TimelineItemComponent key={item.age} item={item} index={index} />
+            {timelineItems.map((item: TimelineItem, index: number) => (
+              <TimelineItemComponent key={item.id} item={item} index={index} />
             ))}
           </div>
         </div>

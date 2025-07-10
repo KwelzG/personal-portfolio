@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Trophy, ChevronDown } from "lucide-react";
+import { Trophy, ChevronDown, User, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
@@ -118,8 +118,8 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            {/* Professional portrait */}
-            <div className="relative w-80 h-80 mx-auto">
+            {/* Professional portrait placeholder */}
+            <div className="relative w-80 h-80 mx-auto group cursor-pointer">
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-site-gold to-site-silver rounded-full opacity-20"
                 animate={{ 
@@ -131,13 +131,22 @@ export default function HeroSection() {
                 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />
-              <motion.img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800"
-                alt="Gracious Justin Kwelle - Professional portrait"
-                className="relative z-10 w-full h-full object-cover rounded-full border-4 border-site-gold shadow-2xl"
+              <motion.div
+                className="relative z-10 w-full h-full bg-gradient-to-br from-site-gold/20 to-site-silver/10 rounded-full border-4 border-site-gold/30 flex items-center justify-center backdrop-blur-sm group-hover:from-site-gold/30 group-hover:to-site-silver/20 transition-all duration-300"
                 animate={{ y: [-20, 0, -20] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              />
+              >
+                <div className="text-center space-y-3">
+                  <User className="text-site-gold text-6xl mx-auto" />
+                  <div>
+                    <p className="text-site-gold text-lg font-semibold">Professional Photo</p>
+                    <p className="text-site-silver text-sm">Click to Upload</p>
+                  </div>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Upload className="text-site-gold text-xl mx-auto" />
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
