@@ -93,17 +93,17 @@ export default function AboutSection() {
                 <div className="space-y-6">
                   <h3 className="text-3xl font-bold text-site-gold mb-4">Right Now</h3>
                   <p className="text-lg text-white leading-relaxed">
-                    I'm 19, building two companies that will reshape Africa's digital economy. 
-                    <strong className="text-site-gold"> Prop3</strong> is tokenizing real-world assets starting with African real estate. 
-                    <strong className="text-site-gold"> LexAI</strong> is bringing AI-powered legal support to law firms across the continent.
+                    At 19, I'm building two technology companies focused on Africa's digital transformation. 
+                    <strong className="text-site-gold"> Prop3</strong> tokenizes real-world assets, starting with African real estate markets. 
+                    <strong className="text-site-gold"> LexAI</strong> provides AI-powered legal research and document processing for law firms.
                   </p>
                   <p className="text-lg text-site-silver leading-relaxed">
-                    When I'm not coding or strategizing, I'm learning the craft of barbering, 
-                    trading markets, and documenting everything. Every skill compounds.
+                    My approach combines technical innovation with practical skills, constantly learning 
+                    and documenting the entrepreneurial journey while building sustainable solutions.
                   </p>
                   <div className="bg-site-secondary/50 p-4 rounded-lg border-l-4 border-site-gold">
-                    <p className="text-site-gold font-semibold">Current Challenge:</p>
-                    <p className="text-white">Building 10 hustles in 100 days</p>
+                    <p className="text-site-gold font-semibold">Current Focus:</p>
+                    <p className="text-white">Scaling AI and blockchain solutions across African markets</p>
                   </div>
                 </div>
               </motion.div>
@@ -121,12 +121,13 @@ export default function AboutSection() {
                 <div className="order-2 md:order-1 space-y-6">
                   <h3 className="text-3xl font-bold text-site-gold mb-4">What I'm Building Into</h3>
                   <p className="text-lg text-white leading-relaxed">
-                    A polymath who masters multiple crafts. An entrepreneur who builds billion-dollar infrastructure. 
-                    A father who creates generational wealth and wisdom.
+                    A technology leader who bridges innovation and practical application. An entrepreneur 
+                    building scalable infrastructure for emerging markets. A strategist focused on 
+                    creating lasting economic impact.
                   </p>
                   <p className="text-lg text-site-silver leading-relaxed">
-                    I'm becoming someone who bridges the gap between street hustle and digital innovation, 
-                    between African roots and global impact. Every day is a step toward that vision.
+                    I'm developing expertise across multiple domains while maintaining focus on Africa's 
+                    technological advancement and sustainable economic growth.
                   </p>
                   <div className="space-y-3">
                     {["Tech Infrastructure Builder", "Wealth Creation Strategist", "Legacy-Focused Leader"].map((item) => (

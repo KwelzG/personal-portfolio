@@ -4,39 +4,39 @@ import { Button } from "@/components/ui/button";
 const projects = [
   {
     title: "Prop3",
-    subtitle: "AI x Web3 Real Estate Tokenization",
-    description: "Tokenizing real-world assets starting with African real estate. Making property investment accessible to anyone, anywhere. Smart contracts meet street wisdom.",
-    status: "SCALING",
-    statusColor: "green",
-    tags: ["Blockchain", "AI", "Real Estate", "Africa"]
+    subtitle: "Real Estate Tokenization Platform",
+    description: "A blockchain-based platform enabling fractional ownership of African real estate through asset tokenization, increasing accessibility and liquidity in property markets.",
+    status: "DEVELOPMENT",
+    statusColor: "yellow",
+    tags: ["Blockchain", "Real Estate", "DeFi", "Africa"]
   },
   {
     title: "LexAI Solutions",
-    subtitle: "AI-Powered Legal Support",
-    description: "Bringing AI-powered legal research and document processing to African law firms. Democratizing access to legal intelligence across the continent.",
-    status: "EARNING",
-    statusColor: "yellow",
-    tags: ["AI/ML", "Legal Tech", "SaaS", "B2B"]
+    subtitle: "Legal AI Research Platform",
+    description: "AI-powered legal research and document analysis platform designed specifically for African legal systems, improving efficiency and access to legal services.",
+    status: "ACTIVE",
+    statusColor: "green",
+    tags: ["AI/ML", "Legal Tech", "SaaS", "Enterprise"]
   }
 ];
 
 const otherHustles = [
   {
-    title: "Trading",
-    description: "Markets, crypto, and risk management. Building wealth while building companies.",
-    status: "LEARNING",
+    title: "Investment Strategy",
+    description: "Developing systematic approaches to market analysis and portfolio management across traditional and cryptocurrency markets.",
+    status: "ACTIVE",
+    statusColor: "green"
+  },
+  {
+    title: "Skills Development",
+    description: "Continuous learning across multiple disciplines to build diverse expertise and practical knowledge.",
+    status: "ONGOING",
     statusColor: "blue"
   },
   {
-    title: "Barbing",
-    description: "Learning the craft. Every skill adds to the arsenal. Street meets suite.",
-    status: "EARNING",
-    statusColor: "yellow"
-  },
-  {
-    title: "Content",
-    description: "Documenting the journey. Everything recorded, nothing wasted.",
-    status: "SCALING",
+    title: "Content Creation",
+    description: "Documenting entrepreneurial insights and technical learnings to share knowledge with the community.",
+    status: "ACTIVE",
     statusColor: "green"
   }
 ];
@@ -62,10 +62,10 @@ export default function ProjectsSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-6xl font-black text-white mb-4">
-            My <span className="text-site-gold">Hustles</span>
+            My <span className="text-site-gold">Projects</span>
           </h2>
           <p className="text-xl text-site-silver max-w-3xl mx-auto">
-            Multiple streams. Multiple skills. One clear mission: building billion-dollar impact.
+            Technology solutions focused on transforming African markets through AI and blockchain innovation.
           </p>
         </motion.div>
 

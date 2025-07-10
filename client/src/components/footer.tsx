@@ -14,10 +14,10 @@ export default function Footer() {
             transition={{ duration: 0.8 }}
           >
             <blockquote className="text-2xl md:text-3xl font-light italic text-white">
-              "Built from the dirt. Scaling to the clouds."
+              "Innovation rooted in purpose. Impact designed for scale."
             </blockquote>
-            <p className="text-site-gold font-tech font-bold">Everything documented. Nothing wasted.</p>
-            <p className="text-site-silver">I build systems that outlive me.</p>
+            <p className="text-site-gold font-tech font-bold">Building Africa's technological future.</p>
+            <p className="text-site-silver">Creating solutions that transform markets and communities.</p>
           </motion.div>
 
           {/* Footer Links */}
@@ -51,8 +51,8 @@ export default function Footer() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <p className="text-site-silver text-sm max-w-2xl mx-auto">
-              From dirt roads to digital kingdoms. This is just the beginning of a legend being written in real time. 
-              Stay tuned for the next chapter.
+              Transforming challenges into opportunities through technology and innovation. 
+              Building sustainable solutions for Africa's digital economy.
             </p>
           </motion.div>
         </div>

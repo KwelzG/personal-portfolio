@@ -63,7 +63,7 @@ export default function HeroSection() {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
               <Trophy className="text-site-gold" size={16} />
-              <span className="font-tech text-sm">Current Level: Hustler Tier 4</span>
+              <span className="font-tech text-sm">Active Projects: 2 Companies</span>
             </motion.div>
 
             <motion.h1
@@ -85,9 +85,9 @@ export default function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
             >
-              Builder of Realities.
+              Entrepreneur & Founder
               <br />
-              <span className="text-site-gold">Documenter of Becoming.</span>
+              <span className="text-site-gold">Building Africa's Digital Future</span>
             </motion.p>
 
             <motion.div
@@ -100,7 +100,7 @@ export default function HeroSection() {
                 onClick={scrollToJourney}
                 className="px-8 py-4 bg-site-gold text-site-primary font-bold rounded-lg hover:bg-site-gold/90 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/25"
               >
-                Start My Journey
+                Explore My Journey
               </Button>
               <Button
                 onClick={scrollToProjects}

@@ -18,20 +18,20 @@ const currentLearning = [
 const recentUpdates = [
   {
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-    alt: "Busy African street market with vendors",
-    text: "Street wisdom meets digital innovation. Every conversation teaches something new about what Africa needs.",
+    alt: "Modern African business environment",
+    text: "Conducting market research to understand regional needs and validate our technology solutions for maximum impact.",
     timeAgo: "2 days ago"
   },
   {
     image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-    alt: "Late night coding session with multiple monitors",
-    text: "3 AM coding sessions hit different when you're building for a billion people. Prop3's smart contracts are coming together beautifully.",
+    alt: "Professional development workspace",
+    text: "Finalizing Prop3's smart contract architecture. Focus on security, scalability, and compliance with African regulations.",
     timeAgo: "4 days ago"
   },
   {
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-    alt: "African businessman in office environment",
-    text: "LexAI just processed its 1000th legal document. Small milestone, massive implications for African legal efficiency.",
+    alt: "Technology solution deployment",
+    text: "LexAI successfully processed 1,000+ legal documents. Performance metrics show significant efficiency improvements.",
     timeAgo: "1 week ago"
   }
 ];
@@ -51,7 +51,7 @@ export default function LiveFeed() {
             Life in <span className="text-site-gold">Motion</span>
           </h2>
           <p className="text-xl text-site-silver max-w-3xl mx-auto">
-            Real-time updates from the journey. Thoughts, wins, and lessons.
+            Current focus areas, learning progress, and recent project updates.
           </p>
         </motion.div>
 
@@ -64,13 +64,13 @@ export default function LiveFeed() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-site-gold mb-6">Today's Thought</h3>
+            <h3 className="text-2xl font-bold text-site-gold mb-6">Current Insights</h3>
             <div className="bg-site-secondary/50 p-6 rounded-xl">
               <p className="text-lg text-white italic leading-relaxed">
-                "Building in public isn't just about transparency—it's about accountability to your future self. 
-                Every documented step is a breadcrumb back to your 'why' when the path gets unclear."
+                "Successful technology adoption in African markets requires deep understanding of local context 
+                combined with global best practices. Every solution must be both innovative and practical."
               </p>
-              <p className="text-site-silver text-sm mt-4">— Posted 3 hours ago</p>
+              <p className="text-site-silver text-sm mt-4">— Recent reflection on market strategy</p>
             </div>
           </motion.div>
 

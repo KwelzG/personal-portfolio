@@ -13,33 +13,33 @@ interface TimelineItem {
 const timelineData: TimelineItem[] = [
   {
     age: "13",
-    title: "Started thinking deeply",
-    description: "The moment I realized I could build my own reality instead of accepting what was given.",
+    title: "Early entrepreneurial mindset",
+    description: "Developed strategic thinking and began exploring technology's potential to solve real-world problems.",
     side: "left"
   },
   {
     age: "16",
-    title: "Touched Web3",
-    description: "First interaction with blockchain technology. Saw the future of finance and ownership.",
+    title: "Blockchain introduction",
+    description: "First exposure to blockchain technology and cryptocurrency. Recognized the transformative potential of decentralized systems.",
     side: "right"
   },
   {
     age: "18",
-    title: "First barbing client",
-    description: "Started learning the craft. Every skill adds to the arsenal. Street smarts meet digital innovation.",
+    title: "Skill diversification",
+    description: "Expanded skill set beyond technology, learning traditional trades while building digital expertise.",
     side: "left"
   },
   {
     age: "19",
-    title: "Building Prop3 + LexAI",
-    description: "Two companies. Multiple hustles. AI x Web3 infrastructure for Africa.",
+    title: "Founded Prop3 & LexAI",
+    description: "Launched two technology companies focused on AI and blockchain solutions for African markets.",
     side: "right",
     isActive: true
   },
   {
     age: "Future",
-    title: "Twins. Legacy. Billion-dollar infra.",
-    description: "Building systems that outlive me. Creating generational wealth and impact.",
+    title: "Scaling impact across Africa",
+    description: "Building sustainable technology infrastructure that creates lasting economic opportunities across the continent.",
     side: "left"
   }
 ];
@@ -154,7 +154,7 @@ export default function JourneyTimeline() {
             The <span className="text-site-gold">Journey</span>
           </h2>
           <p className="text-xl text-site-silver max-w-3xl mx-auto">
-            Every legend has milestones. Here's mine, documented in real time.
+            Key milestones that shaped my entrepreneurial journey and vision for Africa's digital transformation.
           </p>
         </motion.div>
 
