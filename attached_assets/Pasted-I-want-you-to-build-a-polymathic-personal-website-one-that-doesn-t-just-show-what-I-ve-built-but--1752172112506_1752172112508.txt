@@ -1,0 +1,132 @@
+I want you to build a polymathic personal website — one that doesn't just show what I’ve built, but tracks who I’m becoming.
+
+My name is Gracious Justin Kwelle, a 19-year-old African polymath-in-progress. I’m a:
+
+Startup founder (Prop3 + LexAI)
+
+Trader
+
+Content documentarian
+
+Barbing apprentice
+
+Web3 innovator
+
+Future father of twins
+
+This site should feel like an epic yet grounded journey — like a digital scroll of a man mastering multiple crafts on his way to a billion-dollar impact.
+
+✨ Site Structure (Sections)
+1. Hero Section (Opening Scene)
+
+Name: Gracious Justin Kwelle
+
+Tagline: “Builder of Realities. Documenter of Becoming.”
+
+CTA Button: “Start My Journey”
+
+Background: High-contrast, black-gold gradient or street-grit aesthetic
+
+Optional: Add interactive scroll-down hint (↓)
+
+2. Journey Path (Polymath Tracker)
+
+A horizontal or vertical timeline with milestones like:
+
+Age 13: Started thinking deeply
+
+Age 16: Touched Web3
+
+Age 18: First barbing client
+
+Age 19: Building Prop3 + LexAI
+
+Future: Twins. Legacy. Billion-dollar infra.
+
+Make it interactive: hover or click = short story or media snippet
+
+Optional: Add “Current Level: Hustler Tier 4” like a game tracker
+
+3. Who I Am (Layered Bio)
+
+Split into 3 tabs/cards:
+
+Now (what I’m doing this season)
+
+Becoming (what I’m building into)
+
+Core (values: faith, grit, documentation, legacy)
+
+Include a rotating quote or voice snippet
+
+4. My Hustles (Projects + Skills)
+
+Prop3 and LexAI featured as core ventures
+
+Add other hustle lanes: Trading, Barbing, Content
+
+Each with status (Learning | Earning | Scaling) and “Journal Logs” (click = story behind it)
+
+5. The Vault (Digital Experiments)
+
+All my drops, tools, or Notion resources
+
+Tags like “Web3,” “Trading,” “Street Business,” “AI”
+
+Option for early access list
+
+6. Live Feed (Life in Motion)
+
+Integrate Instagram or X
+
+Add a “Today’s Thought” mini-blog
+
+Carousel for “What I’m Learning This Week”
+
+7. Collaborate / Contact
+
+Buttons like:
+
+“Partner with Me”
+
+“Hire Me to Build”
+
+“Pitch Me Your Idea”
+
+Short contact form
+
+8. Footer (Legacy Section)
+
+Quotes:
+
+“Everything documented. Nothing wasted.”
+
+“I build systems that outlive me.”
+
+“From dirt roads to digital kingdoms.”
+
+Simple links to socials
+
+🎮 Optional Features (If AI Can Handle It)
+Gamified Progress Bar (XP per Hustle)
+
+“Season Archive” for quarterly updates
+
+Dark mode switch
+
+AI chatbot version of me
+
+🎨 Design Instructions:
+Theme: Polymath. Urban. Intentional.
+
+Base: Glossy black or dark slate
+
+Accents: Gold, white, hints of silver
+
+Fonts: Strong sans-serif for headers, readable serif or clean body text
+
+Motion: Smooth transitions, reveal-on-scroll, timeline animation
+
+Mobile-first responsive
+
+This site should feel alive. Like it’s recording a legend in real time — not flashy, but powerful. Not perfect, but evolving. Make it clean, bold, and worthy of a future Forbes 30 Under 30.

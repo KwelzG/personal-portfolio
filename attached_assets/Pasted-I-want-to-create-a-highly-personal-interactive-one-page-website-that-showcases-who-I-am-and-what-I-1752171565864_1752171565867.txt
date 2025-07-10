@@ -1,0 +1,78 @@
+I want to create a highly-personal, interactive, one-page website that showcases who I am and what I do. My name is Gracious Justin Kwelle, and I'm a young polymath founder, builder, and digital hustler based in Nigeria. I’m building two companies:
+
+Prop3 — an AI x Web3 platform for real-world asset tokenization (starting with real estate in Africa)
+
+LexAI Solutions — an AI-powered legal support service for African law firms.
+
+My website should reflect my raw, authentic journey — mixing street hustle, digital innovation, faith, and African excellence. It should feel like the online home of a future billionaire.
+
+📌 Website Structure:
+1. Hero Section (Intro)
+
+Big bold headline: “Gracious Justin Kwelle”
+
+Subtext: “Faith. Wealth. Hustle. Growth. Documented.”
+
+Background: Slight movement or glossy black aesthetic with gold or silver elements
+
+Optional: A short looping video or raw image of me working, building, or in the streets
+
+2. About Me Section (With Motion)
+
+Write it in first person. I’m 19. Tell my story — barbing apprentice + startup builder + trader + content docu-journalist. Mention I’m building billion-dollar platforms, not just startups.
+
+Include a fun fact block: “Current challenge: Building 10 hustles in 100 days.”
+
+3. Projects Section (Prop3 + LexAI)
+
+Each project gets a card: logo, short summary, status (e.g., MVP, Clients Active, etc.)
+
+Clicking the card gives a deeper pop-up or scroll-reveal (like a portfolio showcase)
+
+4. Digital Products/Experiments Section
+
+List my trading journal, digital product drops, or AI tools I’m building
+
+Include “Coming Soon” tags for unfinished ones
+
+5. Content Hub / Media Section
+
+Embed my IG or X (Twitter) feed
+
+Have a “featured threads or posts” carousel
+
+6. Contact / Work With Me Section
+
+Minimal but clean form
+
+Add CTAs like “Partner with me”, “Hire me to write for your Web3 startup”, or “Pitch me an idea”
+
+7. Footer
+
+A sleek footer with quotes like:
+“Built from the dirt. Scaling to the clouds.”
+“Everything documented. Nothing wasted.”
+
+Include basic links: IG, Twitter, Email
+
+🎨 Design Vibe:
+Dark glossy background (black/gold/silver)
+
+Urban but elite: clean fonts, minimal layout, subtle animations
+
+Icons that feel futuristic but grounded in Africa
+
+Mobile-optimized and fast loading
+
+⚙️ Tech Features (Optional but nice to have):
+Sticky navbar
+
+Scroll-based animation or parallax
+
+Interactive timeline for my 100-day challenge
+
+AI chatbot widget trained on my story
+
+Blog or writing page that syncs from Notion or MD files
+
+Option to switch between “Builder Mode” and “Documentarian Mode”
