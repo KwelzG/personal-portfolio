@@ -72,27 +72,27 @@
   .text-site-gold {
     color: var(--site-gold);
   }
-  
+
   .text-site-silver {
     color: var(--site-silver);
   }
-  
+
   .bg-site-primary {
     background-color: var(--site-primary);
   }
-  
+
   .bg-site-secondary {
     background-color: var(--site-secondary);
   }
-  
+
   .bg-site-gold {
     background-color: var(--site-gold);
   }
-  
+
   .border-site-gold {
     border-color: var(--site-gold);
   }
-  
+
   .hover\:border-site-gold:hover {
     border-color: var(--site-gold);
   }
@@ -100,29 +100,42 @@
 
 /* Custom animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes glow {
-  from { box-shadow: 0 0 20px var(--site-gold); }
-  to { box-shadow: 0 0 30px var(--site-gold), 0 0 40px var(--site-gold); }
+  from {
+    box-shadow: 0 0 20px var(--site-gold);
+  }
+  to {
+    box-shadow: 0 0 30px var(--site-gold), 0 0 40px var(--site-gold);
+  }
 }
 
 @keyframes slideUp {
-  from { 
-    opacity: 0; 
-    transform: translateY(30px); 
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-float {
@@ -141,9 +154,21 @@
   animation: fadeIn 1s ease-out;
 }
 
+.animate-progress-bar {
+  animation: progressBarLoop 2s linear infinite;
+}
+@keyframes progressBarLoop {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 /* Font families */
 .font-tech {
-  font-family: 'Orbitron', monospace;
+  font-family: "Orbitron", monospace;
 }
 
 /* Custom scrollbar */

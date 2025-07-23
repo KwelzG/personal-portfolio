@@ -3,37 +3,40 @@ import { motion } from "framer-motion";
 const currentLearning = [
   {
     title: "Advanced Solidity patterns",
-    description: "Smart contract optimization for Prop3"
+    description: "Smart contract optimization for Prope3",
   },
   {
     title: "Vector databases",
-    description: "Enhancing LexAI's search capabilities"
+    description: "Enhancing LexAI's search capabilities",
   },
   {
     title: "African market dynamics",
-    description: "Understanding regional variations"
-  }
+    description: "Understanding regional variations",
+  },
 ];
 
 const recentUpdates = [
   {
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
+    image:
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
     alt: "Modern African business environment",
     text: "Conducting market research to understand regional needs and validate our technology solutions for maximum impact.",
-    timeAgo: "2 days ago"
+    timeAgo: "2 days ago",
   },
   {
-    image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
+    image:
+      "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
     alt: "Professional development workspace",
-    text: "Finalizing Prop3's smart contract architecture. Focus on security, scalability, and compliance with African regulations.",
-    timeAgo: "4 days ago"
+    text: "Finalizing Prope3's smart contract architecture. Focus on security, scalability, and compliance with African regulations.",
+    timeAgo: "4 days ago",
   },
   {
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
     alt: "Technology solution deployment",
     text: "LexAI successfully processed 1,000+ legal documents. Performance metrics show significant efficiency improvements.",
-    timeAgo: "1 week ago"
-  }
+    timeAgo: "1 week ago",
+  },
 ];
 
 export default function LiveFeed() {
@@ -64,13 +67,18 @@ export default function LiveFeed() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-site-gold mb-6">Current Insights</h3>
+            <h3 className="text-2xl font-bold text-site-gold mb-6">
+              Deep Insights
+            </h3>
             <div className="bg-site-secondary/50 p-6 rounded-xl">
               <p className="text-lg text-white italic leading-relaxed">
-                "Successful technology adoption in African markets requires deep understanding of local context 
-                combined with global best practices. Every solution must be both innovative and practical."
+                "You cannot move Silicon Valley into Africa. For technology to
+                thrive in Africa, innovation must be grounded in local context
+                or it will fail"
               </p>
-              <p className="text-site-silver text-sm mt-4">— Recent reflection on market strategy</p>
+              <p className="text-site-silver text-sm mt-4">
+                — Gracious Justin Kwelle
+              </p>
             </div>
           </motion.div>
 
@@ -82,7 +90,9 @@ export default function LiveFeed() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-site-gold mb-6">This Week I'm Learning</h3>
+            <h3 className="text-2xl font-bold text-site-gold mb-6">
+              My Current Focus
+            </h3>
             <div className="space-y-4">
               {currentLearning.map((item, index) => (
                 <motion.div
@@ -96,7 +106,9 @@ export default function LiveFeed() {
                   <div className="w-2 h-2 bg-site-gold rounded-full flex-shrink-0" />
                   <div>
                     <p className="text-white font-medium">{item.title}</p>
-                    <p className="text-site-silver text-sm">{item.description}</p>
+                    <p className="text-site-silver text-sm">
+                      {item.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}

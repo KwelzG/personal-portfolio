@@ -14,9 +14,9 @@ export default function Footer() {
             transition={{ duration: 0.8 }}
           >
             <blockquote className="text-2xl md:text-3xl font-light italic text-white">
-              "Innovation rooted in purpose. Impact designed for scale."
+              "The future isn't something I wait for, I build it."
             </blockquote>
-            <p className="text-site-gold font-tech font-bold">Building Africa's technological future.</p>
+            <p className="text-site-gold font-tech font-bold">Shaping Africa's technological future.</p>
             <p className="text-site-silver">Creating solutions that transform markets and communities.</p>
           </motion.div>
 
@@ -28,18 +28,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-site-silver">© 2024 Gracious Justin Kwelle</p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-site-silver hover:text-site-gold transition-colors duration-300">
-                Privacy
-              </a>
-              <a href="#" className="text-site-silver hover:text-site-gold transition-colors duration-300">
-                Terms
-              </a>
-              <a href="#" className="text-site-silver hover:text-site-gold transition-colors duration-300">
-                Blog
-              </a>
-            </div>
+            <p className="text-site-silver">© 2025 Gracious Justin Kwelle</p>
           </motion.div>
 
           {/* Final Message */}
@@ -51,8 +40,8 @@ export default function Footer() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <p className="text-site-silver text-sm max-w-2xl mx-auto">
-              Transforming challenges into opportunities through technology and innovation. 
-              Building sustainable solutions for Africa's digital economy.
+              Transforming challenges into opportunities through technology while 
+              building sustainable solutions for Africa's digital economy.
             </p>
           </motion.div>
         </div>

@@ -1,34 +1,35 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Pill, Zap, Video, Crown } from "lucide-react";
+import look from "../assets/look.jpg";
 
 const tabs = [
   { id: "now", label: "Now" },
   { id: "becoming", label: "Becoming" },
-  { id: "core", label: "Core" }
+  { id: "core", label: "Core" },
 ];
 
 const coreValues = [
   {
     icon: Pill,
     title: "Faith",
-    description: "Guided by purpose beyond profit"
+    description: "God leads, I follow",
   },
   {
     icon: Zap,
     title: "Grit",
-    description: "Built from the dirt, scaling to clouds"
+    description: "In the face of adversity, I persevere",
   },
   {
     icon: Video,
     title: "Documentation",
-    description: "Everything recorded, nothing wasted"
+    description: "Everything recorded, nothing wasted",
   },
   {
     icon: Crown,
     title: "Legacy",
-    description: "Building systems that outlive me"
-  }
+    description: "Building systems that outlive me",
+  },
 ];
 
 export default function AboutSection() {
@@ -85,25 +86,38 @@ export default function AboutSection() {
               >
                 <div>
                   <img
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-                    alt="African entrepreneur working on laptop"
+                    src="https://media.istockphoto.com/id/1075599562/photo/programmer-working-with-program-code.jpg?s=612x612&w=0&k=20&c=n3Vw5SMbMCWW1YGG6lnTfrwndNQ8B_R4Vw-BN7LkqpA="
+                    alt="Young african male programmer writing program code sitting at the workplace with three monitors in the office."
                     className="rounded-xl shadow-2xl w-full h-auto"
                   />
                 </div>
                 <div className="space-y-6">
-                  <h3 className="text-3xl font-bold text-site-gold mb-4">Right Now</h3>
+                  <h3 className="text-3xl font-bold text-site-gold mb-4">
+                    Right Now
+                  </h3>
                   <p className="text-lg text-white leading-relaxed">
-                    At 19, I'm building two technology companies focused on Africa's digital transformation. 
-                    <strong className="text-site-gold"> Prop3</strong> tokenizes real-world assets, starting with African real estate markets. 
-                    <strong className="text-site-gold"> LexAI</strong> provides AI-powered legal research and document processing for law firms.
+                    At present, I'm building two technology companies focused on
+                    Africa's digital transformation.
+                    <strong className="text-site-gold"> Prope3</strong>{" "}
+                    tokenizes real-world assets, starting with African real
+                    estate markets.
+                    <strong className="text-site-gold"> LexAI</strong> provides
+                    AI-powered legal research and document processing for law
+                    firms.
                   </p>
                   <p className="text-lg text-site-silver leading-relaxed">
-                    My approach combines technical innovation with practical skills, constantly learning 
-                    and documenting the entrepreneurial journey while building sustainable solutions.
+                    My approach combines technical innovation with practical
+                    skills, constantly learning and documenting the
+                    entrepreneurial journey while building sustainable
+                    solutions.
                   </p>
                   <div className="bg-site-secondary/50 p-4 rounded-lg border-l-4 border-site-gold">
-                    <p className="text-site-gold font-semibold">Current Focus:</p>
-                    <p className="text-white">Scaling AI and blockchain solutions across African markets</p>
+                    <p className="text-site-gold font-semibold">
+                      Current Focus:
+                    </p>
+                    <p className="text-white">
+                      Scaling AI and blockchain solutions across African markets
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -119,18 +133,26 @@ export default function AboutSection() {
                 className="grid md:grid-cols-2 gap-12 items-center"
               >
                 <div className="order-2 md:order-1 space-y-6">
-                  <h3 className="text-3xl font-bold text-site-gold mb-4">What I'm Building Into</h3>
+                  <h3 className="text-3xl font-bold text-site-gold mb-4">
+                    What I'm Building Into
+                  </h3>
                   <p className="text-lg text-white leading-relaxed">
-                    A technology leader who bridges innovation and practical application. An entrepreneur 
-                    building scalable infrastructure for emerging markets. A strategist focused on 
+                    A technology leader who bridges innovation and practical
+                    application. An entrepreneur building scalable
+                    infrastructure for emerging markets. A strategist focused on
                     creating lasting economic impact.
                   </p>
                   <p className="text-lg text-site-silver leading-relaxed">
-                    I'm developing expertise across multiple domains while maintaining focus on Africa's 
-                    technological advancement and sustainable economic growth.
+                    I'm developing expertise across multiple domains while
+                    maintaining focus on Africa's technological advancement and
+                    sustainable economic growth.
                   </p>
                   <div className="space-y-3">
-                    {["Tech Infrastructure Builder", "Wealth Creation Strategist", "Legacy-Focused Leader"].map((item) => (
+                    {[
+                      "Tech Infrastructure Builder",
+                      "Wealth Creation Strategist",
+                      "Legacy-Focused Leader",
+                    ].map((item) => (
                       <div key={item} className="flex items-center space-x-3">
                         <div className="w-4 h-4 bg-site-gold rounded-full" />
                         <span className="text-white">{item}</span>
@@ -140,8 +162,8 @@ export default function AboutSection() {
                 </div>
                 <div className="order-1 md:order-2">
                   <img
-                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-                    alt="Modern tech workspace with multiple monitors"
+                    src={look}
+                    alt="Business man and back thinking at window in office with city view for legal case"
                     className="rounded-xl shadow-2xl w-full h-auto"
                   />
                 </div>
@@ -157,7 +179,9 @@ export default function AboutSection() {
                 transition={{ duration: 0.5 }}
                 className="text-center space-y-8"
               >
-                <h3 className="text-3xl font-bold text-site-gold mb-8">Core Values</h3>
+                <h3 className="text-3xl font-bold text-site-gold mb-8">
+                  Core Values
+                </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {coreValues.map((value, index) => (
                     <motion.div
@@ -169,7 +193,9 @@ export default function AboutSection() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
                       <value.icon className="text-site-gold text-3xl mb-4 mx-auto" />
-                      <h4 className="text-xl font-bold text-white mb-2">{value.title}</h4>
+                      <h4 className="text-xl font-bold text-white mb-2">
+                        {value.title}
+                      </h4>
                       <p className="text-site-silver">{value.description}</p>
                     </motion.div>
                   ))}
@@ -178,9 +204,11 @@ export default function AboutSection() {
                 {/* Rotating Quote */}
                 <div className="mt-12 p-8 bg-gradient-to-r from-site-gold/10 to-site-silver/10 rounded-xl border border-site-gold/30">
                   <blockquote className="text-2xl font-light italic text-center text-white">
-                    "From dirt roads to digital kingdoms"
+                    "Zero is the beginning of all things possible."
                   </blockquote>
-                  <p className="text-center text-site-gold mt-4 font-semibold">- My daily reminder</p>
+                  <p className="text-center text-site-gold mt-4 font-semibold">
+                    - My daily reminder
+                  </p>
                 </div>
               </motion.div>
             )}

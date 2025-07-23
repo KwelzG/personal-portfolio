@@ -1,35 +1,68 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Handshake, Code, Lightbulb, Instagram, Twitter, Linkedin, Mail } from "lucide-react";
+import {
+  Handshake,
+  Code,
+  Lightbulb,
+  Instagram,
+  Twitter,
+  Linkedin,
+  Mail,
+} from "lucide-react";
+import { FaTiktok, FaYoutube } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
 const contactOptions = [
   {
     icon: Handshake,
     title: "Partner with Me",
-    description: "Let's build billion-dollar infrastructure together"
+    description: "Let's build billion-dollar infrastructure together",
   },
   {
     icon: Code,
     title: "Hire Me to Build",
-    description: "Web3, AI, or content for your startup"
+    description: "Web3, AI, or content for your startup",
   },
   {
     icon: Lightbulb,
     title: "Pitch Me Your Idea",
-    description: "Revolutionary concepts welcome"
-  }
+    description: "Revolutionary concepts welcome",
+  },
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:contact@graciousjustinkwelle.com", label: "Email" }
+  {
+    icon: Instagram,
+    href: "https://instagram.com/graciouskwelle",
+    label: "Instagram",
+  },
+  { icon: Twitter, href: "https://twitter.com/gray_cjk", label: "Twitter" },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com/in/graciouskwelle",
+    label: "LinkedIn",
+  },
+  { icon: Mail, href: "mailto:graciouskwelle@gmail.com", label: "Email" },
+  {
+    icon: FaTiktok,
+    href: "https://tiktok.com/@graciouskwelle",
+    label: "TikTok",
+  },
+  {
+    icon: FaYoutube,
+    href: "https://youtube.com/@graciouskwelle",
+    label: "YouTube",
+  },
 ];
 
 export default function ContactSection() {
@@ -37,22 +70,43 @@ export default function ContactSection() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out! I'll get back to you soon."
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success) {
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out! I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: data.error || "Failed to send message.",
+          variant: "destructive",
+        });
+      }
+    } catch (err) {
+      toast({
+        title: "Error",
+        description: "Failed to send message.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -69,7 +123,8 @@ export default function ContactSection() {
             Let's <span className="text-site-gold">Build</span>
           </h2>
           <p className="text-xl text-site-silver max-w-3xl mx-auto">
-            Partner with me. Hire me. Pitch me your wildest ideas. Let's create something legendary.
+            Partner with me. Hire me. Pitch me your wildest ideas. Let's create
+            something legendary.
           </p>
         </motion.div>
 
@@ -91,7 +146,9 @@ export default function ContactSection() {
                     <option.icon className="text-site-gold text-xl" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-white">{option.title}</h4>
+                    <h4 className="text-xl font-bold text-white">
+                      {option.title}
+                    </h4>
                     <p className="text-site-silver">{option.description}</p>
                   </div>
                 </div>
@@ -131,7 +188,9 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-site-silver text-sm font-medium mb-2">Name</label>
+                  <label className="block text-site-silver text-sm font-medium mb-2">
+                    Name
+                  </label>
                   <Input
                     type="text"
                     value={formData.name}
@@ -142,7 +201,9 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="block text-site-silver text-sm font-medium mb-2">Email</label>
+                  <label className="block text-site-silver text-sm font-medium mb-2">
+                    Email
+                  </label>
                   <Input
                     type="email"
                     value={formData.email}
@@ -155,13 +216,20 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-site-silver text-sm font-medium mb-2">Subject</label>
-                <Select value={formData.subject} onValueChange={(value) => handleInputChange("subject", value)}>
+                <label className="block text-site-silver text-sm font-medium mb-2">
+                  Subject
+                </label>
+                <Select
+                  value={formData.subject}
+                  onValueChange={(value) => handleInputChange("subject", value)}
+                >
                   <SelectTrigger className="w-full bg-site-primary border-site-gold/30 text-white focus:border-site-gold">
                     <SelectValue placeholder="Select a subject" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="partnership">Partnership Opportunity</SelectItem>
+                    <SelectItem value="partnership">
+                      Partnership Opportunity
+                    </SelectItem>
                     <SelectItem value="hire">Hire for Project</SelectItem>
                     <SelectItem value="pitch">Pitch an Idea</SelectItem>
                     <SelectItem value="general">General Inquiry</SelectItem>
@@ -170,7 +238,9 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-site-silver text-sm font-medium mb-2">Message</label>
+                <label className="block text-site-silver text-sm font-medium mb-2">
+                  Message
+                </label>
                 <Textarea
                   value={formData.message}
                   onChange={(e) => handleInputChange("message", e.target.value)}

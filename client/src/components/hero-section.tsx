@@ -18,10 +18,13 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-site-primary via-site-secondary to-site-primary" />
-      
+
       {/* Animated floating particles */}
       <div className="absolute inset-0">
         <motion.div
@@ -32,12 +35,22 @@ export default function HeroSection() {
         <motion.div
           className="w-1 h-1 bg-site-silver rounded-full absolute top-3/4 right-1/3"
           animate={{ y: [-20, 0, -20] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
         />
         <motion.div
           className="w-3 h-3 bg-site-gold/50 rounded-full absolute bottom-1/4 left-1/2"
           animate={{ y: [-20, 0, -20] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
         />
       </div>
 
@@ -53,17 +66,19 @@ export default function HeroSection() {
             {/* Hustler Level Badge */}
             <motion.div
               className="inline-flex items-center space-x-2 bg-site-secondary/80 px-4 py-2 rounded-full border border-site-gold/30"
-              animate={{ 
+              animate={{
                 boxShadow: [
                   "0 0 20px hsl(51, 100%, 50%)",
                   "0 0 30px hsl(51, 100%, 50%), 0 0 40px hsl(51, 100%, 50%)",
-                  "0 0 20px hsl(51, 100%, 50%)"
-                ]
+                  "0 0 20px hsl(51, 100%, 50%)",
+                ],
               }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
               <Trophy className="text-site-gold" size={16} />
-              <span className="font-tech text-sm">Active Projects: 2 Companies</span>
+              <span className="font-tech text-sm">
+                Active Projects: 2 Companies
+              </span>
             </motion.div>
 
             <motion.h1
@@ -87,7 +102,9 @@ export default function HeroSection() {
             >
               Entrepreneur & Founder
               <br />
-              <span className="text-site-gold">Building Africa's Digital Future</span>
+              <span className="text-site-gold">
+                Building Africa's Digital Future
+              </span>
             </motion.p>
 
             <motion.div
@@ -122,30 +139,34 @@ export default function HeroSection() {
             <div className="relative w-80 h-80 mx-auto group cursor-pointer">
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-site-gold to-site-silver rounded-full opacity-20"
-                animate={{ 
+                animate={{
                   boxShadow: [
                     "0 0 20px hsl(51, 100%, 50%)",
                     "0 0 30px hsl(51, 100%, 50%), 0 0 40px hsl(51, 100%, 50%)",
-                    "0 0 20px hsl(51, 100%, 50%)"
-                  ]
+                    "0 0 20px hsl(51, 100%, 50%)",
+                  ],
                 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
               <motion.div
                 className="relative z-10 w-full h-full bg-gradient-to-br from-site-gold/20 to-site-silver/10 rounded-full border-4 border-site-gold/30 flex items-center justify-center backdrop-blur-sm group-hover:from-site-gold/30 group-hover:to-site-silver/20 transition-all duration-300"
                 animate={{ y: [-20, 0, -20] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
-                <div className="text-center space-y-3">
-                  <User className="text-site-gold text-6xl mx-auto" />
-                  <div>
-                    <p className="text-site-gold text-lg font-semibold">Professional Photo</p>
-                    <p className="text-site-silver text-sm">Click to Upload</p>
-                  </div>
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Upload className="text-site-gold text-xl mx-auto" />
-                  </div>
-                </div>
+                <img
+                  src="/src/assets/me.jpg"
+                  alt="Profile"
+                  className="w-72 h-72 object-cover rounded-full border-4 border-site-gold shadow-lg"
+                  style={{ objectPosition: "center" }}
+                />
               </motion.div>
             </div>
           </motion.div>
@@ -153,7 +174,7 @@ export default function HeroSection() {
 
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+          className="absolute bottom-0.5 left-1/2 transform -translate-x-1/2 cursor-pointer"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           onClick={scrollToJourney}

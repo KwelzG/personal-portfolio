@@ -8,7 +8,7 @@ const vaultItems = [
     status: "LIVE",
     statusColor: "green",
     tags: ["Trading", "Notion"],
-    action: "Download"
+    action: "Download",
   },
   {
     title: "100-Day Hustle Tracker",
@@ -16,7 +16,7 @@ const vaultItems = [
     status: "BETA",
     statusColor: "yellow",
     tags: ["Productivity", "Web App"],
-    action: "Early Access"
+    action: "Early Access",
   },
   {
     title: "AI Prompt Library",
@@ -24,17 +24,21 @@ const vaultItems = [
     status: "COMING SOON",
     statusColor: "blue",
     tags: ["AI", "Prompts"],
-    action: "Notify Me"
-  }
+    action: "Notify Me",
+  },
 ];
 
 export default function DigitalVault() {
   const getStatusBgColor = (color: string) => {
     switch (color) {
-      case "green": return "bg-green-500/20 text-green-400";
-      case "yellow": return "bg-yellow-500/20 text-yellow-400";
-      case "blue": return "bg-blue-500/20 text-blue-400";
-      default: return "bg-gray-500/20 text-gray-400";
+      case "green":
+        return "bg-green-500/20 text-green-400";
+      case "yellow":
+        return "bg-yellow-500/20 text-yellow-400";
+      case "blue":
+        return "bg-blue-500/20 text-blue-400";
+      default:
+        return "bg-gray-500/20 text-gray-400";
     }
   };
 
@@ -52,7 +56,8 @@ export default function DigitalVault() {
             The <span className="text-site-gold">Vault</span>
           </h2>
           <p className="text-xl text-site-silver max-w-3xl mx-auto">
-            Digital experiments, tools, and resources. Early access to my latest drops.
+            Digital experiments, tools, and resources. Early access to my latest
+            drops.
           </p>
         </motion.div>
 
@@ -69,28 +74,48 @@ export default function DigitalVault() {
             >
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-lg font-bold text-white">{item.title}</h4>
-                <span className={`px-2 py-1 rounded text-xs ${getStatusBgColor(item.statusColor)}`}>
+                <span
+                  className={`px-2 py-1 rounded text-xs ${getStatusBgColor(
+                    item.statusColor
+                  )}`}
+                >
                   {item.status}
                 </span>
               </div>
-              
-              <p className="text-site-silver text-sm mb-4">{item.description}</p>
-              
+
+              <p className="text-site-silver text-sm mb-4">
+                {item.description}
+              </p>
+
               <div className="flex flex-wrap gap-1 mb-4">
                 {item.tags.map((tag) => (
-                  <span key={tag} className="bg-site-gold/20 text-site-gold px-2 py-1 rounded text-xs">
+                  <span
+                    key={tag}
+                    className="bg-site-gold/20 text-site-gold px-2 py-1 rounded text-xs"
+                  >
                     {tag}
                   </span>
                 ))}
               </div>
-              
-              <Button 
-                variant="ghost" 
-                size="sm"
-                className="text-site-gold hover:text-site-gold/80 font-semibold p-0 h-auto hover:bg-transparent"
-              >
-                {item.action} →
-              </Button>
+
+              {item.title === "Trading Journal Template" ? (
+                <a
+                  href="/public/The holy grail (gracious trading journal template).xlsx"
+                  download
+                  className="text-site-gold hover:text-site-gold/80 font-semibold p-0 h-auto hover:bg-transparent inline-block"
+                  style={{ fontSize: "1rem", padding: 0 }}
+                >
+                  {item.action} →
+                </a>
+              ) : (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-site-gold hover:text-site-gold/80 font-semibold p-0 h-auto hover:bg-transparent"
+                >
+                  {item.action} →
+                </Button>
+              )}
             </motion.div>
           ))}
         </div>

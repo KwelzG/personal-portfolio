@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { User, Upload } from "lucide-react";
 
@@ -17,7 +17,13 @@ interface TimelineItem {
   updatedAt: Date | null;
 }
 
-function TimelineItemComponent({ item, index }: { item: TimelineItem; index: number }) {
+function TimelineItemComponent({
+  item,
+  index,
+}: {
+  item: TimelineItem;
+  index: number;
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -42,16 +48,35 @@ function TimelineItemComponent({ item, index }: { item: TimelineItem; index: num
               }`}
               whileHover={{ scale: 1.02 }}
             >
-              <h3 className={`text-2xl font-bold mb-2 ${item.age === "Future" ? "text-site-silver" : "text-site-gold"}`}>
-                Age {item.age}
-                {item.isActive && " - NOW"}
+              <h3
+                className={`text-2xl font-bold mb-2 ${
+                  item.age === "Future" ? "text-site-silver" : "text-site-gold"
+                }`}
+              >
+                {item.isActive
+                  ? "NOW"
+                  : item.age === "Future"
+                  ? "Age Future"
+                  : `Age ${item.age}`}
               </h3>
-              <h4 className="text-lg font-semibold text-white mb-2">{item.title}</h4>
-              <p className={item.age === "Future" ? "text-site-silver/80" : "text-site-silver"}>{item.description}</p>
+              <h4 className="text-lg font-semibold text-white mb-2">
+                {item.title.replace(/Prop3/g, "Prope3")}
+              </h4>
+              <p
+                className={
+                  item.age === "Future"
+                    ? "text-site-silver/80"
+                    : "text-site-silver"
+                }
+              >
+                {item.description.replace(/Prop3/g, "Prope3")}
+              </p>
               {item.isActive && (
                 <div className="mt-4 inline-flex items-center space-x-2 bg-site-gold/20 px-3 py-1 rounded-full">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                  <span className="text-xs font-tech text-site-gold">ACTIVE</span>
+                  <span className="text-xs font-tech text-site-gold">
+                    ACTIVE
+                  </span>
                 </div>
               )}
             </motion.div>
@@ -92,16 +117,35 @@ function TimelineItemComponent({ item, index }: { item: TimelineItem; index: num
               }`}
               whileHover={{ scale: 1.02 }}
             >
-              <h3 className={`text-2xl font-bold mb-2 ${item.age === "Future" ? "text-site-silver" : "text-site-gold"}`}>
-                Age {item.age}
-                {item.isActive && " - NOW"}
+              <h3
+                className={`text-2xl font-bold mb-2 ${
+                  item.age === "Future" ? "text-site-silver" : "text-site-gold"
+                }`}
+              >
+                {item.isActive
+                  ? "NOW"
+                  : item.age === "Future"
+                  ? "Age Future"
+                  : `Age ${item.age}`}
               </h3>
-              <h4 className="text-lg font-semibold text-white mb-2">{item.title}</h4>
-              <p className={item.age === "Future" ? "text-site-silver/80" : "text-site-silver"}>{item.description}</p>
+              <h4 className="text-lg font-semibold text-white mb-2">
+                {item.title.replace(/Prop3/g, "Prope3")}
+              </h4>
+              <p
+                className={
+                  item.age === "Future"
+                    ? "text-site-silver/80"
+                    : "text-site-silver"
+                }
+              >
+                {item.description.replace(/Prop3/g, "Prope3")}
+              </p>
               {item.isActive && (
                 <div className="mt-4 inline-flex items-center space-x-2 bg-site-gold/20 px-3 py-1 rounded-full">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                  <span className="text-xs font-tech text-site-gold">ACTIVE</span>
+                  <span className="text-xs font-tech text-site-gold">
+                    ACTIVE
+                  </span>
                 </div>
               )}
             </motion.div>
@@ -113,13 +157,26 @@ function TimelineItemComponent({ item, index }: { item: TimelineItem; index: num
 }
 
 export default function JourneyTimeline() {
-  const { data: timelineItems = [], isLoading } = useQuery({
+  const { data, isLoading } = useQuery<TimelineItem[]>({
     queryKey: ["/api/timeline"],
   });
+  const timelineItems: TimelineItem[] = data || [];
+
+  const timelineContainerRef = useRef<HTMLDivElement>(null);
+  const [containerHeight, setContainerHeight] = useState<number>(800);
+
+  useEffect(() => {
+    if (timelineContainerRef.current) {
+      setContainerHeight(timelineContainerRef.current.offsetHeight);
+    }
+  }, [timelineItems.length]);
 
   if (isLoading) {
     return (
-      <section id="journey" className="py-20 bg-site-secondary relative overflow-hidden">
+      <section
+        id="journey"
+        className="py-20 bg-site-secondary relative overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="text-site-gold">Loading timeline...</div>
@@ -131,29 +188,32 @@ export default function JourneyTimeline() {
 
   // Calculate dynamic path for SVG based on number of items
   const itemCount = timelineItems.length;
-  const pathHeight = Math.max(800, itemCount * 200);
+  const pathHeight = Math.max(containerHeight, itemCount * 200);
   const generateCurvedPath = (height: number, items: number) => {
     if (items <= 1) return "M 32 0 L 32 200";
-    
+
     const stepHeight = height / (items - 1);
     let path = "M 32 0";
-    
+
     for (let i = 1; i < items; i++) {
       const y = i * stepHeight;
       const prevY = (i - 1) * stepHeight;
       const midY = prevY + stepHeight / 2;
-      
+
       // Alternate curve directions
       const curveX = i % 2 === 1 ? 25 : 39;
-      
+
       path += ` Q ${curveX} ${midY} 32 ${y}`;
     }
-    
+
     return path;
   };
 
   return (
-    <section id="journey" className="py-20 bg-site-secondary relative overflow-hidden">
+    <section
+      id="journey"
+      className="py-20 bg-site-secondary relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -166,31 +226,38 @@ export default function JourneyTimeline() {
             The <span className="text-site-gold">Journey</span>
           </h2>
           <p className="text-xl text-site-silver max-w-3xl mx-auto">
-            Key milestones that shaped my entrepreneurial journey and vision for Africa's digital transformation.
+            Key milestones that shaped my entrepreneurial journey and vision for
+            Africa's digital transformation.
           </p>
         </motion.div>
 
         {/* Interactive Timeline */}
-        <div className="relative">
+        <div className="relative" ref={timelineContainerRef}>
           {/* Dynamic Curved Timeline - SVG Path */}
-          <svg 
-            className="absolute left-1/2 transform -translate-x-1/2 w-16 h-full pointer-events-none" 
-            viewBox={`0 0 64 ${pathHeight}`} 
+          <svg
+            className="absolute left-1/2 transform -translate-x-1/2 w-16 h-full pointer-events-none"
+            viewBox={`0 0 64 ${pathHeight}`}
             preserveAspectRatio="xMidYStretch"
-            style={{ height: `${itemCount * 16 * 16}px` }}
+            style={{ height: `${pathHeight}px` }}
           >
             <defs>
-              <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <linearGradient
+                id="timelineGradient"
+                x1="0%"
+                y1="0%"
+                x2="0%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#FFD700" stopOpacity="1" />
                 <stop offset="30%" stopColor="#C0C0C0" stopOpacity="0.8" />
                 <stop offset="70%" stopColor="#C0C0C0" stopOpacity="0.8" />
                 <stop offset="100%" stopColor="#FFD700" stopOpacity="1" />
               </linearGradient>
               <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge> 
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
+                <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
                 </feMerge>
               </filter>
             </defs>
@@ -206,7 +273,7 @@ export default function JourneyTimeline() {
 
           {/* Timeline Items */}
           <div className="space-y-16">
-            {timelineItems.map((item: TimelineItem, index: number) => (
+            {timelineItems.map((item, index) => (
               <TimelineItemComponent key={item.id} item={item} index={index} />
             ))}
           </div>
